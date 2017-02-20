@@ -49,9 +49,11 @@ export default class HomeScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={styles.container}>
+                <View style={styles.top}>
 
-                    <TouchableHighlight onPress={this.fetchRandomQuote}>
+                    <TouchableHighlight
+                        onPress={this.fetchRandomQuote}
+                        style={styles.touchable}>
                         <Text>
                             Get Random Quote
                         </Text>
@@ -62,9 +64,11 @@ export default class HomeScreen extends Component {
 
                 </View>
 
-                <View style={styles.container}>
+                <View style={styles.bottom}>
 
-                    <TouchableHighlight onPress={this.fetchRandomMeme}>
+                    <TouchableHighlight
+                        onPress={this.fetchRandomMeme}
+                        style={styles.touchable}>
                         <Text>
                             Get Random Meme
                         </Text>
@@ -87,9 +91,24 @@ const getMemeUrl = function () {
 
 const styles = StyleSheet.create({
     container: {
+        padding: 16,
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
+    },
+    top: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    bottom: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    touchable: {
+        padding: 8,
+        margin: 8
     }
 });
